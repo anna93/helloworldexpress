@@ -1,0 +1,22 @@
+{
+  "name": "helloworldexpress",
+  "description": "This project is hello world project using express and redis",
+  "main": "index.js",
+  "authors": [
+    "shekharanna1993@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/anna93/helloworldexpress",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
