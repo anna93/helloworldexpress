@@ -1,0 +1,14 @@
+{
+  "name": "helloworldexpress",
+  "version": "1.0.0",
+  "description": "This project is hello world project using express and redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shekharanna1993@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
