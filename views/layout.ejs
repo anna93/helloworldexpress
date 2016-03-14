@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Getting handon with Express</title>
+    <title><%- title %></title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -12,10 +12,25 @@
     <![endif]-->
 
     <!-- styles -->
-    <link href="stylesheets/style.css" rel="stylesheet">
-
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="background-color: antiquewhite">
-<%- body %>
+
+<body>
+    <%- body %>
+    <% a = "Shekhar Joshi" %>
+    <% if(a == "Shekhar Joshii") { %>
+        <%= a %>
+    <% } else { %>
+        <%= "Vinit Payal" %>
+    <% } %>
+
+    <% pig = [1,2,3,4] %>
+    <% for(var i=0; i < pig.length; i++) { %>
+        <%= pig[i] %>
+    <% } %>
 </body>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </html>
