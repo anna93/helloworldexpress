@@ -1,6 +1,49 @@
-
-<div>
-
-   Saying hello from home.ejs
-</div>
 <% layout('layout'); -%>
+
+<div class="row">
+   <div class="col col-sm-6 col-sm-offset-3" style="margin-top: 10%">
+      <div class="row">
+         <div id="login-error-div" style="display: none">
+
+         </div>
+      </div>
+      <form role="form" method="get" action="#">
+         <div class="form-group">
+            <label for="emailId">EMAILID</label>
+            <input type="email" name="emailId" id="emailId" class="form-control">
+         </div>
+         <div class="form-group">
+            <label for="pswd">PASSWORD</label>
+            <input type="password" name="password" id="pswd" class="form-control">
+         </div>
+         <button class="btn btn-default" id="login-btn">Login</button>
+      </form>
+   </div>
+</div>
+
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+
+   $("#login-btn").click(function (e) {
+      e.preventDefault();
+      $.get('/validateLogin',{
+         'emailId': $("#emailId").val(),
+         'password': $("#pswd").val()
+      }).success(function(res){
+         console.log(res.loginStatus);
+         if(res.loginStatus==0){
+             $("#login-error-div").removeClass("alert alert-success");
+             $("#login-error-div").addClass("alert alert-danger");
+             $("#login-error-div").html("<strong>Login Failed ! "+res.msg);
+             $("#login-error-div").css("display", "block");
+         }
+         else{
+             $("#login-error-div").css("display", "block");
+             $("#login-error-div").removeClass("alert alert-danger");
+             $("#login-error-div").addClass("alert alert-success");
+             $("#login-error-div").html("Success ! Successfuly logged in");
+
+         }
+      });
+   });
+</script>
